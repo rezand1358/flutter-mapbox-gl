@@ -108,7 +108,9 @@ abstract class MapboxGlPlatform {
   Future<void> setMapLanguage(String language) async {
     throw UnimplementedError('setMapLanguage() has not been implemented.');
   }
-
+ Future<void> setMapRTL(String language) async {
+    throw UnimplementedError('setMapRTL() has not been implemented.');
+  }
   Future<void> setTelemetryEnabled(bool enabled) async {
     throw UnimplementedError('setTelemetryEnabled() has not been implemented.');
   }

@@ -489,6 +489,21 @@ final class MapboxMapController
 		    }
         break;
       }
+      case "map#setMapRTL": {
+  	    final String language = call.argument("language");
+        try {
+		      mapboxMap.setRTLTextPlugin(
+            "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.10.1/mapbox-gl-rtl-text.js",
+            null,
+            true // Lazy load the plugin
+            );
+		      result.success(null);
+		    } catch (RuntimeException exception) {
+		      Log.d(TAG, exception.toString());
+			    result.error("MAPBOX RTL PLUGIN ERROR", exception.toString(), null);
+		    }
+        break;
+      }
       case "map#getVisibleRegion": {
         Map<String, Object> reply = new HashMap<>();
         VisibleRegion visibleRegion = mapboxMap.getProjection().getVisibleRegion();

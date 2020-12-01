@@ -188,7 +188,12 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
       'language': language,
     });
   }
-
+ @override
+  Future<void> setMapRTL(String language) async {
+    await _channel.invokeMethod('map#setMapRTL', <String, dynamic>{
+      'language': language,
+    });
+  }
   @override
   Future<void> setTelemetryEnabled(bool enabled) async {
     await _channel.invokeMethod('map#setTelemetryEnabled', <String, dynamic>{

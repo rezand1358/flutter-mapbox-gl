@@ -325,7 +325,9 @@ class MapboxMapController extends ChangeNotifier {
   Future<void> setMapLanguage(String language) async {
     return MapboxGlPlatform.getInstance(_id).setMapLanguage(language);
   }
-
+Future<void> setMapRTL(String language) async {
+    return MapboxGlPlatform.getInstance(_id).setMapRTL(language);
+  }
   /// Enables or disables the collection of anonymized telemetry data.
   ///
   /// The returned [Future] completes after the change has been made on the
